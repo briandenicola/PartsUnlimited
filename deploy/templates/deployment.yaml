@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: partsunlimited
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: partsunlimited
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: partsunlimited
+    spec:
+      containers:
+      - name: htpartsunlimitedtpbin
+        image: {{ print .Values.image.repository "/" .Values.image.app_name ":" .Values.image.tag }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: CONNSTR_DefaultConnectionString
+          value: {{ .Values.db.connection_string }} 
+        resources:
+          limits:
+            memory: "4096Mi"
+            cpu: "4"
+          requests:
+            memory: "2048Mi"
+            cpu: "2"
+      nodeSelector:
+        kubernetes.io/os: windows
+      tolerations:
+      - key: "role"
+        operator: "Equal"
+        value: "applications"
+        effect: "NoSchedule"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: partsunlimited-svc
+  namespace: {{ .Values.namespace }}
+  annotations:
+   service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  selector:
+    app: partsunlimited
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer
