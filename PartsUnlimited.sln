@@ -7,14 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D24BBB2-522
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartsUnlimitedWebsite", "src\PartsUnlimitedWebsite\PartsUnlimitedWebsite.csproj", "{68411661-4B0C-444A-BC13-2182FBB116B9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4110DE97-3235-463F-A7D1-54D98A31659A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartsUnlimitedLoadTest", "tests\PartsUnlimitedLoadTest\PartsUnlimitedLoadTest.csproj", "{EC5DCAAC-8394-4A2F-A64A-2210D6E9B5B9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartsUnlimitedWebsiteTests", "tests\PartsUnlimitedWebsiteTests\PartsUnlimitedWebsiteTests.csproj", "{0039BB37-1126-420C-B893-EBFC1E41F1C6}"
-EndProject
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "PartsUnlimitedEnv", "env\PartsUnlimitedEnv.deployproj", "{BD52204A-7129-4FF2-B66C-34A5E6F70CDD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
