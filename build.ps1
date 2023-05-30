@@ -15,4 +15,4 @@ Write-Host "Building the Docker Container..."
 Set-Location "$DEPLOYMENT_SOURCE\src\PartsUnlimitedWebsite\"
 docker build -t $ACR/partsunlimited:$ID .
 docker push $ACR/partsunlimited:$ID
-Set-Location
+Set-Location $DEPLOYMENT_SOURCE
