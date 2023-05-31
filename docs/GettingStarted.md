@@ -20,14 +20,15 @@
 1. `git clone https://github.com/briandenicola/PartsUnlimited`
 
 ## Create Azure Resources
-1. Setup an Azure Container Registry
-1. Setup an Azure SQL Database
-1. az aks install-cli
-
 ### Setup AKS Cluster
-1. az login 
+1. az login
+1. az aks install-cli
 1. cd infrastructure\aks\windows2022
 1. `task up -- southcentralus`
+
+###  Setup Azure SQL and Container Registry 
+1. `task up -- ${APP_NAME}`
+> **Note!** APP_NAME is the randomly generated resource name created above. It will be in form of 'pet_name'-'uuid'. For example 'dog-222553'
 
 ## Build the source code
 1. az acr login -n partsunlimitedacr.azurecr.io
