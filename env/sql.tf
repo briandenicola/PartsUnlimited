@@ -22,8 +22,8 @@ resource "azurerm_mssql_database" "this" {
 resource "azurerm_mssql_firewall_rule" "home" {
   name             = "AllowHomeNetwork"
   server_id        = azurerm_mssql_server.this.id
-  start_ip_address = "${chomp(data.http.myip.response_body)}"
-  end_ip_address   = "${chomp(data.http.myip.response_body)}"
+  start_ip_address = local.ip_address
+  end_ip_address   = local.ip_address
 }
 
 # resource "azurerm_mssql_firewall_rule" "aks" {

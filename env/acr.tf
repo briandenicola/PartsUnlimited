@@ -12,9 +12,9 @@ resource "azurerm_container_registry" "this" {
       ip_range            =  "${local.ip_address}/32"
     }
 
-    ip_rule = {
-        action = "Allow"
-        ip_address = "${data.azurerm_public_ip.aks.ip_address}/32"
-    }
+    # ip_rule = {
+    #     action = "Allow"
+    #     ip_address = "${data.azurerm_public_ip.aks.ip_address}/32"
+    # }
   }
 }
