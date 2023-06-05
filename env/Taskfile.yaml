@@ -14,7 +14,6 @@ tasks:
   apply:
     cmds:
     - terraform apply -auto-approve -var "app_name={{.APP}}" -compact-warnings
-    - task: creds
     vars: 
       APP: '{{default .CLI_ARGS}}'
 
