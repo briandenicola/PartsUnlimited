@@ -5,7 +5,7 @@
     - SKU - Standard_D8S_v3 #v3 VM SKU is required for nested virtualization 
     - OS  - Windows 2022
 1. Install [Visual Studio 2013 Update 5 or later (up through Visual Studio 2019)](http://www.visualstudio.com)
-1. Install [chocolatey](https://community.chocolatey.org/install.ps1')))
+1. Install [chocolatey](https://community.chocolatey.org/install.ps1')
 1. Install the following
     - choco install git
     - choco install powershell-core
